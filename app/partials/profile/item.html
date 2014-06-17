@@ -1,0 +1,54 @@
+<div class="profile-fixed-wrapper">
+	<div class="profile-container">
+		<div class="block profile-block">
+			<div class="picture">
+				<img ng-src="{{ profile.picture.profile }}" alt="" class="img-responsive">
+			</div>
+			<div class="info">
+				<h2><span class="text-orange">SiNT</span><span class="text-black">{{ profile.first_name | uppercase }}</span></h1>
+				<p>{{ profile.first_name }} {{ profile.last_name }}</p>
+				<a href="{{ profile.website }}" target="_blank">{{ profile.website }}</a>
+				<p>Opleiding: {{ profile.program.name }}</p>
+			</div>
+			<div class="side">
+				<h2>{{ profile.program.location }}</h2>
+				<a href="{{ account.url }}" target="_blank" ng-repeat="account in profile.socialmedia" class="socialmedia">
+					<img ng-src="/images/socialmedia/{{ account.type }}.png" alt="{{ account.username }}">
+				</a>
+			</div>
+		</div>
+		<div class="block portfolio-block">
+			<div class="half">
+				<a href="#"><img src="http://placehold.it/600x400"></a>
+			</div>
+			<div class="half">
+				<a href="#"><img src="http://placehold.it/600x200"></a>
+				<div class="half">
+					<a href="#"><img src="http://placehold.it/300x200"></a>
+				</div>
+				<div class="half">
+					<a href="#"><img src="http://placehold.it/300x200"></a>
+				</div>
+			</div>
+		</div>
+		<div class="block">
+			<div class="quote">
+				<h3>{{ profile.quote }}</h3>
+			</div>
+			<div class="questions">
+				<div class="question" ng-repeat="answer in profile.answers | limitTo: 2">
+					<h3>{{ answer.question.label }}</h3>
+					<p>{{ answer.value }}</p>
+				</div>
+			</div>
+		</div>
+		<div class="block network-block">
+			<h3>Intern netwerk</h3>
+			<div class="network">
+				<div class="profile" ng-repeat="item in profile.network | limitTo: 4">
+					<a ui-sref="app.profiles.item(item)"><img ng-src="{{ item.picture.network }}" alt=""></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

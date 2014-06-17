@@ -1,0 +1,153 @@
+.navbar {
+	top: 0;
+	left: 0;
+	right: 0;
+	position: fixed;
+	z-index: 1200;
+	background: #f47c30;
+
+	.inner {
+		z-index: 1220;
+
+		.bar, .filters {
+			@include make-row();
+		}
+
+		.bar {
+			padding-left: 15px;
+			padding-right: 15px;
+			min-height: 50px;
+
+			.navbar-toggle,
+			.filter-btn {
+				float: left;
+			}
+
+			.navbar-toggle {
+				position: relative;
+				margin-right: $navbar-padding-horizontal;
+				padding: 0;
+				background-color: transparent;
+				background-image: none;
+				border: none;
+
+				&:focus {
+					outline: 0;
+				}
+
+				.icon-bar {
+					display: block;
+					width: 46px;
+					height: 5px;
+					background-color: $btn-default-bg;
+				}
+				.icon-bar + .icon-bar {
+					margin-top: 5px;
+				}
+			}
+
+			.navbar-search {
+				@include make-xs-column(12);
+				@include make-sm-column(8);
+				@include make-sm-column-offset(4);
+				@include make-md-column(6);
+				@include make-md-column-offset(6);
+				height: 25px;
+				border: none;
+				font-size: 12px;
+				line-height: 12px;
+				padding-left: 10px;
+				padding-right: 10px;
+				text-transform: uppercase;
+
+				&:focus {
+					outline: none;
+				}
+			}
+
+			.filter-btn {
+				text-transform: uppercase;
+				font-size: 10px;
+				font-weight: 700;
+				height: 25px;
+				background: #fff;
+				border: 0px solid #fff;
+				border-radius: 0px;
+
+				&:focus {
+					outline: none;
+				}
+			}
+
+			.left, .right, .middle {
+				margin-top: 12px;
+				margin-bottom: 13px;
+				display: block;
+				height: 25px;
+			}
+
+			.left, .right {
+				@include make-xs-column(6);
+				@include make-sm-column(4);
+			}
+
+			.left {
+				text-align: left;
+			}
+
+			.middle {
+				@include make-xs-column(12);
+				@include make-sm-column(4);
+				text-align: center;
+
+				.logo {
+					line-height: 25px;
+					font-size: 22px;
+					font-weight: 800;
+					&:focus,
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+
+			.right {
+				text-align: right;
+				float: right;
+			}
+		}
+
+
+	}
+	.filters {
+		background: #fff;
+
+		h2 {
+			font-size: 16px;
+			text-transform: uppercase;
+		}
+
+		.main {
+			@include make-sm-column(3);
+
+			.filter {
+
+			}
+		}
+
+		.multiple-choice {
+			background: #f1f1f1;
+			@include make-sm-column(6);
+
+			.filter {
+				@include make-xs-column(6);
+				@include make-sm-column(3);
+			}
+		}
+
+		.keyword-search {
+			background: #ededed;
+			@include make-sm-column(3);
+		}
+	}
+}

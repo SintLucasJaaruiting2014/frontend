@@ -1,0 +1,16 @@
+<div class="grid" infinite-scroll="loadMore(profiles)" infinite-scroll-distance="1" infinite-scroll-disabled="Profile.busy()">
+	<a class="item" ng-href="#/profile/{{ profile.id }}" ng-repeat="profile in profiles">
+		<img ng-src="{{ profile.picture.grid }}" alt="{{ profile.first_name }} {{ profile.last_name }}" class="img-responsive" preload-with-default-src="/images/placeholder.jpg">
+		<div class="overlay">
+			<div class="wrapper">
+				<div class="name">
+					<span class="text-orange">SiNT</span><span class="text-black">{{ profile.first_name | uppercase }}</span>
+				</div>
+				<div class="title">
+					{{ profile.program.name }}
+				</div>
+			</div>
+		</div>
+	</a>
+</div>
+<div ui-view autoscroll="false"></div>

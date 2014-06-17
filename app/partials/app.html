@@ -1,0 +1,102 @@
+<div class="navbar">
+	<div class="inner">
+		<div class="bar">
+			<div class="left">
+				<button type="button" class="navbar-toggle">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<button class="filter-btn" ng-click="toggle('filters')"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+			</div>
+			<div class="right">
+				<input class="navbar-search" type="text" placeholder="Zoek een student">
+			</div>
+			<div class="middle">
+				<a href="#/" class="logo">
+					<span class="text-white">SiNT</span><span class="text-black">LUCAS</span>
+				</a>
+			</div>
+		</div>
+		<div class="filters" ng-show="visible('filters')" ng-controller="FilterCtrl">
+			<div class="main">
+				<h2>Filteren op</h2>
+				<div class="filter">
+					<label for="filter-program">Opleiding</label>
+					<select name="program" id="filter-program">
+						<option value="">Kies een opleiding</option>
+					</select>
+				</div>
+				<div class="filter">
+					<label for="filter-program">Locatie</label>
+					<select name="program" id="filter-program">
+						<option value="">Kies een opleiding</option>
+					</select>
+				</div>
+				<div class="filter">
+					<label for="filter-program">Richting</label>
+					<select name="program" id="filter-program">
+						<option value="">Kies een richting</option>
+					</select>
+				</div>
+				<div class="filter">
+					<label for="filter-program">Opleiding</label>
+					<select name="program" id="filter-program">
+						<option value="">Kies een studie</option>
+					</select>
+				</div>
+			</div>
+			<div class="multiple-choice">
+				<div class="filter" ng-repeat="filter in filters">
+					<label>{{ filter.label }}</label>
+					<div class="checkbox" ng-repeat="option in filter.options">
+						<label><input type="checkbox"> {{ option.label }}</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="filter">
+						<label for="">Geslacht</label>
+						<div class="checkbox"><label for=""><input type="checkbox"> Man</label></div>
+					</div>
+					<div class="filter">
+						<label for="">Geslacht</label>
+						<div class="checkbox"><label for=""><input type="checkbox"> Man</label></div>
+					</div>
+					<div class="filter">
+						<label for="">Geslacht</label>
+						<div class="checkbox"><label for=""><input type="checkbox"> Man</label></div>
+					</div>
+					<div class="filter">
+						<label for="">Geslacht</label>
+						<div class="checkbox"><label for=""><input type="checkbox"> Man</label></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="filter">
+						<label for="">Geslacht</label>
+						<div class="checkbox"><label for=""><input type="checkbox"> Man</label></div>
+					</div>
+					<div class="filter">
+						<label for="">Geslacht</label>
+						<div class="checkbox"><label for=""><input type="checkbox"> Man</label></div>
+					</div>
+					<div class="filter">
+						<label for="">Geslacht</label>
+						<div class="checkbox"><label for=""><input type="checkbox"> Man</label></div>
+					</div>
+					<div class="filter">
+						<label for="">Geslacht</label>
+						<div class="checkbox"><label for=""><input type="checkbox"> Man</label></div>
+					</div>
+				</div>
+			</div>
+			<div class="keyword-search">
+				<h2>Zoeken op trefwoorden</h2>
+				<textarea name="search" rows="4" class="form-control"></textarea>
+			</div>
+		</div>
+	</div>
+</div>
+<div ui-view autoscroll="false"></div>
+
