@@ -20,7 +20,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
 		})
 		.state('app.profiles', {
 			url: '/',
-			templateUrl: '..//partials/profile/grid.html',
+			templateUrl: '../partials/profile/grid.html',
 			controller: 'GridCtrl'
 		})
 		.state('app.profiles.item', {
